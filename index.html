@@ -42,12 +42,26 @@
   </table>
   <script type="text/javascript">
       function Validate() {
+          level = localStorage.getItem('level');
+          if (level == null) {
+            level = 1;
+            localStorage.setItem('level', level);
+          }
+          console.log(level);
           var password = document.getElementById("txtPassword").value;
-          if (password != "Mavis") {
+          if (password != "Mavis" && level == 1) {
               alert("Password wrong. Try Again...");
               return false;
-          } else {
+          } else if (password == "Mavis" && level == 1){
               alert("Password Correct!")
+              level = 2;
+              localStorage.setItem('level', level);
+              alert("Level now at " + level)
+          } else if (password == "Mavis" && level == 2){
+              alert("Password Correct!")
+              level = 3;
+              localStorage.setItem('level', level);
+              alert("Level now at " + level)
           }
           return true;
       }

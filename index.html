@@ -50,10 +50,7 @@
           }
           console.log(level);
           var password = document.getElementById("txtPassword").value;
-          if (password != "Mavis" && level == 1) {
-              alert("Password wrong. Try Again...");
-              return false;
-          } else if (password == "Mavis" && level == 1){
+          if (password == "Mavis" && level == 1){
               alert("Password Correct!")
               level = 2;
               localStorage.setItem('level', level);
@@ -68,6 +65,9 @@
               level = 1;
               localStorage.setItem('level', level);
               alert("Level now at " + level)
+          } else {
+              alert("Password wrong. Try Again...");
+              return false;
           }
           return true;
       }

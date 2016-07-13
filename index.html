@@ -22,6 +22,7 @@
 </head>
 
 <body>
+  <h1>What's Mavis' password?</h1>
   <p>Type in password below:</p>
 
   <table border="0" cellpadding="3" cellspacing="0">
@@ -50,16 +51,31 @@
           }
           console.log(level);
           var password = document.getElementById("txtPassword").value;
-          if (password == "Mavis" && level == 1){
+          if (password == "Alfie" && level == 1){
               alert("Password Correct!")
               level = 2;
               localStorage.setItem('level', level);
-              alert("Level now at " + level)
-          } else if (password == "Mavis" && level == 2){
+              alert("Mavis has now thought that was too easy (she's gone for a longer word), can you use Brute Force to find out her better password?")
+          } else if (password == "Australia" && level == 2){
               alert("Password Correct!")
               level = 3;
               localStorage.setItem('level', level);
-              alert("Level now at " + level)
+              alert("Her better password was longer, but still too easy. She's improved it again, she thinks initial letters would be good. What can it be?")
+          } else if (password == "AEJ" && level == 3){
+              alert("Password Correct!")
+              level = 4;
+              localStorage.setItem('level', level);
+              alert("Her better password was shorter, but a bit more difficult since it wasn't a 'word'. She's improved it again, adding numbers. What can it be?")
+          } else if (password == "AEJ32" && level == 4){
+              alert("Password Correct!")
+              level = 5;
+              localStorage.setItem('level', level);
+              alert("Her better password now includes numbers, this has added complexity. She's improved it again without changing the characters used. What can it be?")
+          } else if (password == "A3E2J" && level == 5){
+              alert("Password Correct!")
+              level = 6;
+              localStorage.setItem('level', level);
+              alert("You're ready to join Anonymous - well done")
           } else if (password == "jsh"){
               alert("Password Correct!")
               level = 1;

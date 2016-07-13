@@ -22,6 +22,7 @@
 </head>
 
 <body>
+  <p>Type in password below:</p>
 
   <table border="0" cellpadding="3" cellspacing="0">
       <tr>
@@ -64,7 +65,7 @@
               alert("Level now at " + level)
           } else if (password == "jsh"){
               alert("Password Correct!")
-              level = null;
+              level = 1;
               localStorage.setItem('level', level);
               alert("Level now at " + level)
           }

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>What's Mavis' password?</title>
+  <style>
+  
+  body {
+    font: 100% arial, helvetica, sans-serif;
+  }
+  
+  fieldset {
+    padding: 0 1em 1em 1em;
+  }
+  
+  legend {
+    padding: 1em;
+  }
+  
+  </style>
+</head>
+
+<body>
+  <h1>What's Mavis' password?</h1>
+  <p>Mavis has an online bank account that is protected by a password<br>
+    She’s got a short memory and finds it difficult to remember her passwords so uses something to remind her.</p>
+  <ul>
+    <li>Her birth date is 15/01/1932</li>
+    <li>She has grandchildren Alexander, Elisabeth, Jackson</li>
+    <li>She has a cat called Alfie</li>
+    <li>She lives in Australia</li>
+  </ul>
+  <p>What could her password be? Try and crack it online</p>
+  <p>Type in password below:</p>
+
+  <form onsubmit="Validate();return false">
+    <table border="0" cellpadding="3" cellspacing="0">
+        <tr>
+            <td>
+                Password:
+            </td>
+            <td>
+                <input type="password" id="txtPassword" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td>
+                <input type="button" id="btnSubmit" type="submit" value="Login" onclick="return Validate()" />
+            </td>
+        </tr>
+    </table>
+  </form>
+  <script type="text/javascript">
+      function Validate() {
+          level = localStorage.getItem('level');
+          if (level == null) {
+            level = 1;
+            localStorage.setItem('level', level);
+          }
+          console.log(level);
+          var password = document.getElementById("txtPassword").value;
+          if (password == "Alfie" && level == 1){
+              alert("Password Correct!")
+              level = 2;
+              localStorage.setItem('level', level);
+              alert("Mavis has now thought that was too easy (she's gone for a longer word), can you use Brute Force to find out her better password?")
+          } else if (password == "Australia" && level == 2){
+              alert("Password Correct!")
+              level = 3;
+              localStorage.setItem('level', level);
+              alert("Her better password was longer, but still too easy. She's improved it again, she thinks initial letters would be good. What can it be?")
+          } else if (password == "AEJ" && level == 3){
+              alert("Password Correct!")
+              level = 4;
+              localStorage.setItem('level', level);
+              alert("Her better password was shorter, but a bit more difficult since it wasn't a 'word'. She's improved it again, adding numbers. What can it be?")
+          } else if (password == "AEJ32" && level == 4){
+              alert("Password Correct!")
+              level = 5;
+              localStorage.setItem('level', level);
+              alert("Her better password now includes numbers, this has added complexity. She's improved it again without changing the characters used. What can it be?")
+          } else if (password == "A3E2J" && level == 5){
+              alert("Password Correct!")
+              level = 6;
+              localStorage.setItem('level', level);
+              alert("You're ready to join Anonymous - well done")
+          } else if (password == "jsh"){
+              alert("Password Correct!")
+              level = 1;
+              localStorage.setItem('level', level);
+              alert("Level now at " + level)
+          } else {
+              alert("Password wrong. Try Again...");
+              return false;
+          }
+          return true;
+      }
+  </script>
+
+</body>
+
+</html>

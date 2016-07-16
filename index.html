@@ -34,23 +34,25 @@
   <p>What could her password be? Try and crack it online</p>
   <p>Type in password below:</p>
 
-  <table border="0" cellpadding="3" cellspacing="0">
-      <tr>
-          <td>
-              Password:
-          </td>
-          <td>
-              <input type="password" id="txtPassword" />
-          </td>
-      </tr>
-      <tr>
-          <td>
-          </td>
-          <td>
-              <input type="button" id="btnSubmit" type="submit" value="Login" onclick="return Validate()" />
-          </td>
-      </tr>
-  </table>
+  <form onsubmit="Validate();return false">
+    <table border="0" cellpadding="3" cellspacing="0">
+        <tr>
+            <td>
+                Password:
+            </td>
+            <td>
+                <input type="password" id="txtPassword" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td>
+                <input type="button" id="btnSubmit" type="submit" value="Login" onclick="return Validate()" />
+            </td>
+        </tr>
+    </table>
+  </form>
   <script type="text/javascript">
       function Validate() {
           level = localStorage.getItem('level');

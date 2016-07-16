@@ -47,18 +47,11 @@
           <td>
           </td>
           <td>
-              <input type="button" id="btnSubmit" value="Login" onclick="return Validate()" />
+              <input type="button" id="btnSubmit" type="submit" value="Login" onclick="return Validate()" />
           </td>
       </tr>
   </table>
   <script type="text/javascript">
-    document.getElementById("txtPassword")
-    .addEventListener("keyup", function(event) {
-      event.preventDefault();
-      if (event.keyCode == 13) {
-        document.getElementById("txtPassword").click();
-      }
-    });
       function Validate() {
           level = localStorage.getItem('level');
           if (level == null) {
